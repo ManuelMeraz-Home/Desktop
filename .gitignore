@@ -1,0 +1,17 @@
+
+*.swp
+.ICEauthority
+.bash_history
+.cache/
+.config/
+.gnupg/
+.local/
+.mozilla/
+.ssh/
+.sudo_as_admin_successful
+.vim/
+.vim_mru_files
+.viminfo
+.wget-hsts
+Downloads/
+dev/
