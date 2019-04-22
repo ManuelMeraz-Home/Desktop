@@ -8,7 +8,7 @@ I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.
 
 #### My `.bashrc` comes with features that I find useful:
 1. Shows the current branch you're in
-![Display git branch in terminal](images/.show_git_branch.png)
+![Display git branch in terminal](./images/.show_git_branch.png)
 2. Appends to history file, and does not overwrite it. Meaning that.
 3. Ignores duplicates for commands that are executed repeatedly.
 4. Infinite history size for commands
