@@ -89,5 +89,3 @@ set -o vi
 
 # ctrl-l clears screan in vi mode
 bind -m vi-insert "\C-l":clear-screen
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
