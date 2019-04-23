@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-if [[ $HOME_SETUP ]]; then
+if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
   exit 0
 fi
@@ -48,7 +48,7 @@ git submodule update --init --recursive > /dev/null
 echo "Setup .vim..."
 spinner $HOME/.vim/setup.sh
 
-echo "EXPORT HOME_SETUP=true" >> $HOME/.profile
+touch $HOME/.home_setup
 source $HOME/.profile
 
 echo "Done!"
