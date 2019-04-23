@@ -42,11 +42,6 @@ echo "Setting up git home repository"
 (spinner git pull origin master)
 (spinner source ~/.profile)
 
-echo "Setup git submodules (.vim, projects/ etc)..."
-(spinner git submodule update --init --recursive --remote)
-echo "Setup .vim..."
-(spinner $HOME/.vim/setup.sh)
-
 touch $HOME/.home_setup
 source $HOME/.profile
 
