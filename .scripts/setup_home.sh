@@ -2,7 +2,6 @@
 
 if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
-  exit 0
 fi
   
 
@@ -37,14 +36,12 @@ echo "spotify"
 
 echo "Setting up git home repository"
 (spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
-if [[ -z $? ]]; then
-  (spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
-fi
+(spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
 (spinner git pull origin master)
 (spinner source ~/.profile)
 
 echo "Setup git submodules (.vim, projects/ etc)..."
-git submodule update --init --recursive > /dev/null
+(spinner git submodule update --init --recursive)
 echo "Setup .vim..."
 (spinner $HOME/.vim/setup.sh)
 
