@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ManuelMeraz/home.svg?branch=master)](https://travis-ci.com/ManuelMeraz/home)
+
 # home
 
 My linux home directory files and useful scripts. 
