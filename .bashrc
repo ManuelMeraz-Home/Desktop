@@ -99,4 +99,5 @@ set -o vi
 # ctrl-l clears screan in vi mode
 bind -m vi-insert "\C-l":clear-screen
 
+[ -d ~/.vim ] && source ~/.vim/.bashrc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
