@@ -9,6 +9,7 @@ I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.
 1. Connect to the internet
 
 2. Open a terminal
+3. Copy and paste the following into a terminal
  ```
 cd ~
 wget https://raw.githubusercontent.com/ManuelMeraz/home/master/.scripts/setup_home.sh
