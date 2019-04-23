@@ -1,5 +1,8 @@
 dist: xenial
 
+git:
+  submodules: false
+
 script:
   cd ~
   wget https://raw.githubusercontent.com/ManuelMeraz/home/master/.scripts/setup_home.sh
