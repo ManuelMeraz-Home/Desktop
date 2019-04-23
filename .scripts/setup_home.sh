@@ -31,12 +31,15 @@ spinner snap install spotify
 
 echo "Setting up git home repository"
 spinner git init && git remote add origin https://github.com/manuelmeraz/home.git
-spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile
+if [[ -z $? ]]; then
+  spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile
+fi
 spinner git pull origin master
 spinner source ~/.profile
 
 echo "Setup git submodules (.vim, projects/ etc)..."
 git submodule update --init --recursive > /dev/null
+echo "Setup .vim..."
 spinner $HOME/.vim/setup.sh
 
 echo "Done!"
