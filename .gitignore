@@ -4,6 +4,7 @@
 .cache/
 .config/
 .gnupg/
+.home_setup
 .local/
 .mozilla/
 .ssh/
