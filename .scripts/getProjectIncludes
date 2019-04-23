@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+import os
+import sys
+
+def IncludeRecursively(directory):
+    # Include all directories containing a header file of some sort
+    # recursively, without manually adding them in to the flags 
+    # list
+    include_paths = []
+    for dir, subdirs, files in os.walk(directory):
+        for file in files:
+            if '.h' in file and dir not in include_paths: 
+                include_paths.append('-isystem ')
+                include_paths.append(dir + ' ') 
+                break
+
+    return include_paths
+
+if __name__ == '__main__':
+    project_dir = sys.argv[1]
+
+    include_dirs = IncludeRecursively(project_dir)
+    print ''.join(include_dirs)

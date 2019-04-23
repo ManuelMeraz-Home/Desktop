@@ -27,3 +27,24 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 [[ ":$PATH:" != *":$HOME/.scripts"* ]] && PATH="$HOME/.scripts:${PATH}"
+
+cd ~
+source ~/.bashrc
+
+if [ ! "$MANPATH" == *$HOME/.local/share/man* ]; then
+    export MANPATH="$MANPATH:$HOME/.local/share/man/"
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash 2> /dev/null
+
+# search home directory and workspace directory for files with fzf
+export FZF_DEFAULT_COMMAND='ag $PROJECT --hidden --ignore .git -g "" && ag $HOME --hidden --ignore .git -g ""  '
+
+export WORKSPACE="$HOME/projects"
+
+OLD_PROJECT=$PROJECT
+export PROJECT=
+if [ ! "$OLD_PROJECT" == "$PROJECT" ]; then
+    export PROJECT_INCLUDE_DIRS=$(getProjectIncludes $PROJECT)
+fi
+

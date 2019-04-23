@@ -100,4 +100,3 @@ set -o vi
 bind -m vi-insert "\C-l":clear-screen
 
 [ -d ~/.vim ] && source ~/.vim/.bashrc
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

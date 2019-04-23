@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#alias vim="$EDITOR"
 alias vbc="vim ~/.bashrc"
 alias vrc="vim ~/.vim/vimrc"
 alias vba="vim ~/.bash_aliases"
