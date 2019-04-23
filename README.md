@@ -13,7 +13,7 @@ I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.
 cd ~
 wget https://raw.githubusercontent.com/ManuelMeraz/home/master/.scripts/setup_home.sh
 chmod +x setup_home.sh
-./setup_home.sh
+source ./setup_home.sh
 ```
 
 ### Features
