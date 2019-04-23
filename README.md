@@ -7,7 +7,10 @@ I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.
 #### Quick Start
 
 1. Connect to the internet
-2.
+2. wget https://raw.githubusercontent.com/ManuelMeraz/home/master/.scripts/setup_home.sh
+3. chmod +x setup_home.sh
+4. ./setup_home.sh
+
 
 ### Features
 
