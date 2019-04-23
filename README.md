@@ -34,10 +34,7 @@ source ./setup_home.sh
 7. Allows cd'ing into a directory without typing in cd
 8. Enables `vi` mode in the terminal, allowing to edit terminal commands like `vi`
 
-##### Advanced features enabled by the .vim submodule 
+##### Advanced features enabled by the [.vim](https://github.com/manuelmeraz/.vim) repo 
 
 9. `ctrl+p` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to search for files, select one, then open it in vim.
 10. `ctrl+r` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to reverse research for previously entered commands
-
-#### `.vim`
-A submodule to vim settings
