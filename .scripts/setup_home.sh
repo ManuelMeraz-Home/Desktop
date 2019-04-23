@@ -42,4 +42,6 @@ git submodule update --init --recursive > /dev/null
 echo "Setup .vim..."
 spinner $HOME/.vim/setup.sh
 
+source ~/.profile
+
 echo "Done!"
