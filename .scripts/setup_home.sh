@@ -12,7 +12,7 @@ spinner() {
   PID=$!
   i=1
   sp="/-\|"
-  #echo -n ' '
+  echo -n ' '
   while [ -d /proc/$PID ]
   do
     printf "\b${sp:i++%${#sp}:1}"
@@ -25,28 +25,28 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
               "geany" "bash-completion" "cmake")
 
 echo "Installing favorite applications..."
-spinner sudo apt -qq update 
+(spinner sudo apt -qq update)
 
 for app in ${applications[@]}; do
   echo "$app"
-  spinner sudo apt -qq install $app -y
+  (spinner sudo apt -qq install $app -y)
 done
 
 echo "spotify"
-spinner snap install spotify
+(spinner snap install spotify)
 
 echo "Setting up git home repository"
-spinner git init && git remote add origin https://github.com/manuelmeraz/home.git
+(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
 if [[ -z $? ]]; then
-  spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile
+  (spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
 fi
-spinner git pull origin master
-spinner source ~/.profile
+(spinner git pull origin master)
+(spinner source ~/.profile)
 
 echo "Setup git submodules (.vim, projects/ etc)..."
 git submodule update --init --recursive > /dev/null
 echo "Setup .vim..."
-spinner $HOME/.vim/setup.sh
+(spinner $HOME/.vim/setup.sh)
 
 touch $HOME/.home_setup
 source $HOME/.profile
