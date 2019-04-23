@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+if [[ $HOME_SETUP ]]; then
+  echo "Home is already setup!"
+  exit 0
+fi
+  
+
 # Shows a spinner while running  a command
 spinner() {
   $@ &> /dev/null &
@@ -42,6 +48,7 @@ git submodule update --init --recursive > /dev/null
 echo "Setup .vim..."
 spinner $HOME/.vim/setup.sh
 
-source ~/.profile
+echo "EXPORT HOME_SETUP=true" >> $HOME/.profile
+source $HOME/.profile
 
 echo "Done!"
