@@ -3,6 +3,7 @@
 .bash_history
 .cache/
 .config/
+.fzf.bash
 .gnupg/
 .home_setup
 .local/
