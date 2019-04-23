@@ -29,6 +29,12 @@ done
 echo "spotify"
 spinner snap install spotify
 
+echo "Setting up git home repository"
+spinner git init && git remote add origin https://github.com/manuelmeraz/home.git
+spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile
+spinner git pull origin master
+spinner source ~/.profile
+
 echo "Setup git submodules (.vim, projects/ etc)..."
 git submodule update --init --recursive > /dev/null
 spinner $HOME/.vim/setup.sh
