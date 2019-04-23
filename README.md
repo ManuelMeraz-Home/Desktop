@@ -1,8 +1,13 @@
 # home
 
-My linux home directory files and useful scripts
+My linux home directory files and useful scripts. 
 
-I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.bash_alises` and other scripts over time. This is my way of utilizing version control to improve these files effectively. 
+I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.bash_alises` and other scripts over time. This is my way of utilizing version control to improve these files effectively whenever i need to reinstall and set up my home directory.
+
+#### Quick Start
+
+1. Connect to the internet
+2.
 
 ### Features
 
@@ -21,14 +26,8 @@ I've found myself reinstalling ubuntu on occasion and I improve my `.bashrc`, `.
 
 ##### Advanced features enabled by the .vim submodule 
 
-9. `ctrl+p` uses `ag` and `fzf` to search for files, select one, then open it in vim.
-10. `ctrl+r` uses `ag` and `fzf` to reverse research for previously entered commands
-
-References:
-
-[ag](https://github.com/ggreer/the_silver_searcher)
-
-[fzf](https://github.com/junegunn/fzf)
+9. `ctrl+p` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to search for files, select one, then open it in vim.
+10. `ctrl+r` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to reverse research for previously entered commands
 
 #### `.vim`
 A submodule to vim settings
