@@ -1,5 +1,6 @@
 *.swp
 .ICEauthority
+.NERD*
 .bash_history
 .cache/
 .config/
