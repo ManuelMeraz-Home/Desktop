@@ -26,7 +26,7 @@ source ./setup_home.sh
 
 ![Display git branch in terminal](.images/show_git_branch.png)
 
-2. Appends to history file, and does not overwrite it. Meaning that.
+2. Appends to history file, and does not overwrite it.
 3. Ignores duplicates for commands that are executed repeatedly.
 4. Infinite history size for commands
 5. Checks the window size after each command, and if necessary, update the values of LINES and COLUMNS
