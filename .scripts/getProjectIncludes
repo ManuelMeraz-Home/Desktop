@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# This script is used by the projects script to find all subdirectories containing header files in a directory. Can be used standalone as well.
+
 import os
 import sys
 
