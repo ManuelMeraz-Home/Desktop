@@ -38,3 +38,21 @@ source ./setup_home.sh
 
 9. `ctrl+p` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to search for files, select one, then open it in vim.
 10. `ctrl+r` uses [ag](https://github.com/ggreer/the_silver_searcher) and [fzf](https://github.com/junegunn/fzf) to reverse research for previously entered commands
+
+#### `.scripts/project`
+
+This bash script works in conjunction with `.profile`. There are a few environment varibles set by this that are useful, mainly for C/C++ projects. 
+
+1. `WORKSPACE`: Path to a directory where projects are stored (default: `$HOME/projects/`)
+
+2. `PROJECT`: The path 'current' project that you're working on (default:None)
+
+    The `PROJECT` environment variable is set by using the `project` command, which is callable from anywhere. You pass an argument that is the same name as the directory of the project in the `projects` directory. 
+
+    Example:
+
+    `project my_project`
+
+    `WORKSPACE` is now `$HOME/projects/my_project/`
+
+3. `PROJECT_INCLUDE_DIRS`: This environment variable is set alongside `PROJECT` and is an environment variable with all the include directories (directories that contain header files) in the project directory. This variable contains `-isystem` previous to each include directory and can be passed directly as a flag to any C/C++ compiler. I typically use it for `YouCompleteMe` with vim.
