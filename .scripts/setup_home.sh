@@ -41,6 +41,7 @@ echo "Setting up git home repository"
 (spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
 (spinner git pull origin master)
 (spinner source ~/.profile)
+(spinner git update-index --assume-unchanged $HOME/.profile)
 
 touch $HOME/.home_setup
 source $HOME/.profile

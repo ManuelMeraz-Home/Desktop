@@ -33,12 +33,13 @@ for branch in $(git branch); do
         break
     fi  
 done
-cd - > /dev/null
 
 if [ "$branch_found" == false ]; then
-    echo "Branch not found"
-    return 1
+    echo "Branch not found, using master instead"
+    git checkout master > /dev/null
 fi  
+
+cd - > /dev/null
 
 current_project="export PROJECT=$project_path"
 
