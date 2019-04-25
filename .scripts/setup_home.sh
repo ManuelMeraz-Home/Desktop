@@ -2,6 +2,7 @@
 
 if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
+  exit 1
 fi
   
 
@@ -25,9 +26,19 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
               "python3-dev" "python-dev" "python3-pip" "python-pip"
               "build-essential" "clang" "clang-tidy" "clang-format")
 
+
+echo "Sudo is required. Password might be prompted"
+sudo sleep
+
+if [[ ! -z $? ]]; then
+  echo "Exiting script"
+  exit 1
+fi
+
 echo "Installing favorite applications..."
 (spinner sudo apt -qq update)
 
+echo "Installing favorite applications..."
 for app in ${applications[@]}; do
   echo "$app"
   (spinner sudo apt -qq install $app -y)
