@@ -95,6 +95,7 @@ fi
 
 # vim mode bash
 set -o vi
+bind 'set show-mode-in-prompt on'
 
 # ctrl-l clears screan in vi mode
 bind -m vi-insert "\C-l":clear-screen
