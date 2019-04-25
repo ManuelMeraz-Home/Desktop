@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = https://github.com/ManuelMeraz/.vim
+[submodule "projects/tracker"]
+	path = projects/tracker
+	url = https://github.com/ManuelMeraz/Tracker
