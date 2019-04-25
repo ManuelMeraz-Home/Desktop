@@ -53,6 +53,8 @@ This bash script works in conjunction with `.profile`. There are a few environme
 
     `project my_project`
 
-    `WORKSPACE` is now `$HOME/projects/my_project/`
+    `PROJECT` is now `$HOME/projects/my_project/`
 
-3. `PROJECT_INCLUDE_DIRS`: This environment variable is set alongside `PROJECT` and is an environment variable with all the include directories (directories that contain header files) in the project directory. This variable contains `-isystem` previous to each include directory and can be passed directly as a flag to any C/C++ compiler. I typically use it for `YouCompleteMe` with vim.
+3. `PROJECT_INCLUDE_DIRS`: This environment variable is set alongside `PROJECT` and is an environment variable with all the include directories (directories that contain header files) in the project directory. This variable contains `-isystem` previous to each include directory and can be passed directly as a flag to any C/C++ compiler. I typically use it for `YouCompleteMe` with vim. 
+    
+    If using the `.vim` submodule with vim, and you have a `compilation_databse.json` file generated for `clang` tools,        then I have a script in there that automatically extracts all the header data and gives it to the `Ale` linters (a vim plugin) for very nice linting. Used for C/C++ projects. 
