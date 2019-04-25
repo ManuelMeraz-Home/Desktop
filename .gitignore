@@ -16,7 +16,6 @@
 .mozilla/
 .ssh/
 .sudo_as_admin_successful
-.vim/
 .vim_mru_files
 .viminfo
 .wget-hsts
