@@ -13,11 +13,17 @@ def IncludeRecursively(directory):
     # list
     include_paths = []
 
-    for dir, subdirs, files in os.walk(directory):
+    for root, subdirs, files in os.walk(directory):
+        if os.path.basename(root) == 'include' and root not in include_paths:
+            include_paths.append('-isystem')
+            include_paths.append(root)
+
+            continue
+
         for file in files:
-            if '.h' in file and dir not in include_paths:
-                include_paths.append('-isystem ')
-                include_paths.append(dir + ' ')
+            if '.h' in file and root not in include_paths:
+                include_paths.append('-isystem')
+                include_paths.append(root)
 
                 break
 
@@ -28,4 +34,4 @@ if __name__ == '__main__':
     project_dir = sys.argv[1]
 
     include_dirs = IncludeRecursively(project_dir)
-    print ''.join(include_dirs)
+    print ' '.join(include_dirs)
