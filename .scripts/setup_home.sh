@@ -2,7 +2,7 @@
 
 if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
-  exit 1
+  return 1
 fi
   
 
@@ -32,7 +32,7 @@ sudo sleep
 
 if [[ ! -z $? ]]; then
   echo "Exiting script"
-  exit 1
+  return 1
 fi
 
 echo "Installing favorite applications..."
