@@ -30,8 +30,8 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
 echo "Sudo is required. Password might be prompted"
 sudo sleep 1
 
-if [[ ! -z $? ]]; then
-  echo "Exiting script"
+if [[ $? != 0 ]]; then
+  echo "Exiting script, was not succesful"
   return 1
 fi
 
