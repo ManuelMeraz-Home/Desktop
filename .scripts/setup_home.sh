@@ -28,7 +28,7 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
 
 
 echo "Sudo is required. Password might be prompted"
-sudo sleep
+sudo sleep 1
 
 if [[ ! -z $? ]]; then
   echo "Exiting script"
@@ -51,14 +51,13 @@ echo "Setting up git home repository"
 (spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
 (spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
 (spinner git pull origin master)
-(spinner source ~/.profile)
 (spinner git update-index --assume-unchanged $HOME/.profile)
 
 echo "Setting up .vim and projects submodules..."
 (spinner git submodule update --init --recursive --remote)
 (spinner $HOME/.vim/setup.sh)
 
-touch $HOME/.home_setup
-source $HOME/.profile
+(spinner touch $HOME/.home_setup)
+source ~/.profile
 
 echo "Done!"
