@@ -1,6 +1,6 @@
 #functions
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 # If not running interactively, don't do anything
@@ -56,12 +56,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\n\[\033[01;32m\]\u@\h\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\ $'
 
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+    PS1="\[\033[32m\]\w\n\u@\h\[\033[33m\]$(parse_git_branch)\[\033[00m\]$"
 fi
 
 unset color_prompt force_color_prompt
@@ -96,6 +96,8 @@ fi
 # vim mode bash
 set -o vi
 bind 'set show-mode-in-prompt on'
+bind 'set vi-ins-mode-string "+"'
+bind 'set vi-cmd-mode-string ""'
 
 # ctrl-l clears screan in vi mode
 bind -m vi-insert "\C-l":clear-screen
