@@ -103,3 +103,4 @@ bind 'set vi-cmd-mode-string ""'
 bind -m vi-insert "\C-l":clear-screen
 
 [ -d ~/.vim ] && source ~/.vim/.bashrc
+[ -d /home/manny/projects/tracker ] && source /home/manny/projects/tracker/tools/set_env
