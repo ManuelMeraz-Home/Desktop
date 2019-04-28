@@ -24,7 +24,8 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
               "tree" "openssh-server" "openssh-client" "tansmission"
               "geany" "bash-completion" "cmake" "gcc" "g++" "python3"
               "python3-dev" "python-dev" "python3-pip" "python-pip"
-              "build-essential" "clang" "clang-tidy" "clang-format")
+              "build-essential" "clang" "clang-tidy" "clang-format" 
+              "clang-tools")
 
 
 echo "Sudo is required. Password might be prompted"
