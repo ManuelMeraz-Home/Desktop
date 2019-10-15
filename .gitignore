@@ -19,6 +19,7 @@
 .vim_mru_files
 .viminfo
 .wget-hsts
+.Xauthority
 Desktop/
 Downloads/
 examples.desktop
