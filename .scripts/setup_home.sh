@@ -49,8 +49,16 @@ echo "spotify"
 (spinner snap install spotify)
 
 echo "Setting up git home repository"
-(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
-(spinner rm $HOME/.bash_logout $HOME/.bashrc $HOME/.profile)
+(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git -y)
+
+if [ -e $HOME/.profile ]; then
+    (spinner rm $HOME/.profile)
+fi
+
+if [ -e $HOME/.bashrc ]; then
+    (spinner rm $HOME/.bashrc)
+fi
+
 (spinner git pull origin master)
 (spinner git update-index --assume-unchanged $HOME/.profile)
 
