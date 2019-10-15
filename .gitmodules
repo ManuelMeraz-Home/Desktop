@@ -6,4 +6,4 @@
 	url = https://github.com/ManuelMeraz/Tracker
 [submodule "projects/conan-config"]
 	path = projects/conan-config
-	url = git@github.com:ManuelMeraz/conan-config.git
+	url = https://github.com/ManuelMeraz/conan-config.git
