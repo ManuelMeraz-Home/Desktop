@@ -49,7 +49,17 @@ echo "spotify"
 (spinner snap install spotify)
 
 echo "Setting up git home repository"
-(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git -y)
+
+if [ ! -d $HOME/.ssh ]; then
+    mkdir $HOME/.ssh
+fi
+
+if [ ! -e $HOME/.ssh/known_hosts ]; then
+    touch $HOME/.ssh/known_hosts
+fi
+   
+(ssh-keygen -F github.com || ssh-keyscan github.com >> $HOME/.ssh/known_hosts)
+(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
 
 if [ -e $HOME/.profile ]; then
     (spinner rm $HOME/.profile)
