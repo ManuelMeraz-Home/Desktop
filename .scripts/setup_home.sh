@@ -36,7 +36,7 @@ if [[ $? != 0 ]]; then
   return 1
 fi
 
-echo "Installing favorite applications..."
+echo "Updating and upgrading ubuntu..."
 sudo apt -qq update
 sudo apt -qq upgrade -y
 
