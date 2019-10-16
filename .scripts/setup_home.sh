@@ -37,7 +37,8 @@ if [[ $? != 0 ]]; then
 fi
 
 echo "Installing favorite applications..."
-(spinner sudo apt -qq update)
+sudo apt -qq update
+sudo apt -qq upgrade -y
 
 echo "Installing favorite applications..."
 for app in ${applications[@]}; do
