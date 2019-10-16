@@ -46,9 +46,8 @@ for app in ${applications[@]}; do
   sudo apt -qq install $app -y
 done
 
-echo "spotify"
-snap install spotify
-snap install universal-ctags
+sudo snap install spotify
+sudo snap install universal-ctags
 
 echo "Setting up git home repository"
 
