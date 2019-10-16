@@ -7,3 +7,6 @@
 [submodule "projects/conan-config"]
 	path = projects/conan-config
 	url = https://github.com/ManuelMeraz/conan-config.git
+[submodule "projects/ReinforcementLearning"]
+	path = projects/ReinforcementLearning
+	url = https://github.com/ManuelMeraz/ReinforcementLearning.git
