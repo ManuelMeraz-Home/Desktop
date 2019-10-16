@@ -1,7 +1,9 @@
 *.swp
 .ICEauthority
 .NERD*
+.Xauthority
 .bash_history
+.bash_logout
 .cache/
 .cisco/
 .clang-format
@@ -19,7 +21,6 @@
 .vim_mru_files
 .viminfo
 .wget-hsts
-.Xauthority
 Desktop/
 Downloads/
 examples.desktop
