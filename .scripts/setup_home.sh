@@ -42,12 +42,12 @@ echo "Installing favorite applications..."
 echo "Installing favorite applications..."
 for app in ${applications[@]}; do
   echo "$app"
-  (spinner sudo apt -qq install $app -y)
+  sudo apt -qq install $app -y
 done
 
 echo "spotify"
-(spinner snap install spotify)
-(spinner snap install universal-ctags)
+snap install spotify
+snap install universal-ctags
 
 echo "Setting up git home repository"
 
