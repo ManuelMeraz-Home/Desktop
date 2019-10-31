@@ -4,21 +4,6 @@ if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
   return 1
 fi
-  
-
-# Shows a spinner while running  a command
-spinner() {
-  $@ &> /dev/null &
-  PID=$!
-  i=1
-  sp="/-\|"
-  echo -n ' '
-  while [ -d /proc/$PID ]
-  do
-    printf "\b${sp:i++%${#sp}:1}"
-  done
-  printf "\b"
-}
 
 applications=("vim" "tmux" "silversearcher-ag" "git" "htop" 
               "tree" "openssh-server" "openssh-client" "tansmission"
@@ -60,24 +45,24 @@ if [ ! -e $HOME/.ssh/known_hosts ]; then
 fi
    
 (ssh-keygen -F github.com || ssh-keyscan github.com >> $HOME/.ssh/known_hosts)
-(spinner git init && git remote add origin https://github.com/manuelmeraz/home.git)
+git init && git remote add origin https://github.com/manuelmeraz/home.git
 
 if [ -e $HOME/.profile ]; then
-    (spinner rm $HOME/.profile)
+    rm $HOME/.profile
 fi
 
 if [ -e $HOME/.bashrc ]; then
-    (spinner rm $HOME/.bashrc)
+    rm $HOME/.bashrc
 fi
 
-(spinner git pull origin master)
-(spinner git update-index --assume-unchanged $HOME/.profile)
+git pull origin master
+git update-index --assume-unchanged $HOME/.profile
 
 echo "Setting up .vim and projects submodules..."
-(spinner git submodule update --init --recursive --remote)
-(spinner $HOME/.vim/setup.sh)
+git submodule update --init --recursive --remote
+$HOME/.vim/setup.sh
 
-(spinner touch $HOME/.home_setup)
+touch $HOME/.home_setup
 source ~/.profile
 
 echo "Done!"
