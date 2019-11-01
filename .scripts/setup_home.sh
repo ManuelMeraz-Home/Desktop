@@ -33,6 +33,7 @@ done
 
 sudo snap install spotify
 sudo snap install universal-ctags
+sudo snap install clion --classic
 
 echo "Setting up git home repository"
 
