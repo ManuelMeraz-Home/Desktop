@@ -19,10 +19,12 @@
 .markdownNavigator/
 .mozilla/
 .nv/
+.nvidia*
 .python_history
 .ros/
 .ssh/
 .sudo_as_admin_successful
+.thunderbird
 .vim_mru_files
 .viminfo
 .wget-hsts
