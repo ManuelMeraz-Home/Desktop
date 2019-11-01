@@ -61,7 +61,7 @@ git update-index --assume-unchanged $HOME/.profile
 
 echo "Setting up .vim and projects submodules..."
 git submodule update --init --recursive --remote
-$HOME/.vim/setup.sh
+sudo $HOME/.vim/setup.sh
 
 touch $HOME/.home_setup
 source ~/.profile
