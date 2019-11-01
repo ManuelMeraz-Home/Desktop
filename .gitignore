@@ -1,9 +1,5 @@
-.java/
-.markdownNavigator/
-.nv/
-.ros/
-tags
 *.swp
+.CLion2019*/
 .ICEauthority
 .NERD*
 .Xauthority
@@ -18,9 +14,13 @@ tags
 .fzf.bash
 .gnupg/
 .home_setup
+.java/
 .local/
+.markdownNavigator/
 .mozilla/
+.nv/
 .python_history
+.ros/
 .ssh/
 .sudo_as_admin_successful
 .vim_mru_files
@@ -31,3 +31,4 @@ Desktop/
 Downloads/
 examples.desktop
 snap/
+tags
