@@ -1,0 +1,59 @@
+" Enable filetype detection
+" Load the 'ftplugin/filetype.vim' in 'runtimepath'
+" Load the 'indent/filetype.vim' in 'runtimepath', as an exam
+filetype plugin indent on
+
+" Turn on color highlighting
+syntax on
+
+" Show line number, nice tabs, and relative numbers
+set number ts=4 sw=4 sts=4 nocompatible expandtab rnu
+
+" Lightline status bar on the bottom 
+set laststatus=2
+
+" Paste mode allows pasting without
+" auto indenting in insert mode. This
+" toggle that by pressing F2
+set pastetoggle=<F2>
+
+" remap WQ to wq
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
+" ignore ex mode
+nnoremap q: <Nop>
+nnoremap Q <nop>
+set ideajoin
+set surround
+
+nnoremap <leader>a :action $SelectAll<CR>
+nnoremap <leader>b :action GotoDeclaration<CR>
+nnoremap <leader>c :action $Copy<CR>
+nnoremap <leader>d :action EditorDuplicate<CR>
+nnoremap <leader>e :action RecentFiles<CR>
+nnoremap <leader>f :action Find<CR>
+nnoremap <leader>g :action GotoLine<CR>
+nnoremap <leader>h :action TypeHierarchy<CR>
+nnoremap <leader>i :action ImplementMethods<CR>
+nnoremap <leader>m :action EditorScrollToCenter<CR>
+nnoremap <leader>n :action FileChooser.NewFolder<CR>
+nnoremap <leader>o :action OverrideMethods<CR>
+nnoremap <leader>p :action ParameterInfo<CR>
+nnoremap <leader>q :action QuickJavaDoc<CR>
+nnoremap <leader>r :action Replace<CR>
+nnoremap <leader>s :action SaveAll<CR>
+nnoremap <leader>t :action Vcs.UpdateProject<CR>
+nnoremap <leader>u :action GotoSuperMethod<CR>
+nnoremap <leader>v :action $Paste<CR>
+nnoremap <leader>w :action EditorSelectWord<CR>
+nnoremap <leader>x :action $Cut<CR>
+nnoremap <leader>y :action EditorDeleteLine<CR>
+nnoremap <leader>[ :action EditorCodeBlockStart<CR>
+nnoremap <leader>] :action EditorCodeBlockEnd<CR>
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>cd :action ChooseDebugConfiguration<CR>
+nnoremap <leader>rr :action Run<CR>
+nnoremap <leader>cr :action ChooseRunConfiguration<CR>
