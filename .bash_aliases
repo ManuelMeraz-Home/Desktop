@@ -7,6 +7,7 @@ alias vbp="vim ~/.profile"
 
 alias c="clear"
 alias cdp='cd "$PROJECT"'
+alias cdw='cd "$WORKSPACE"'
 alias project="source project"
 
 alias sbash="source ~/.profile"
