@@ -1,3 +1,8 @@
+.java/
+.markdownNavigator/
+.nv/
+.ros/
+tags
 *.swp
 .ICEauthority
 .NERD*
@@ -21,6 +26,7 @@
 .vim_mru_files
 .viminfo
 .wget-hsts
+.xprofile
 Desktop/
 Downloads/
 examples.desktop
