@@ -8,7 +8,7 @@ if [[ -e $HOME/.home_setup ]]; then
 fi
 
 applications=("vim" "tmux" "silversearcher-ag" "git" "htop" 
-              "tree" "openssh-server" "openssh-client" "tansmission"
+              "tree" "openssh-server" "openssh-client" "transmission"
               "geany" "bash-completion" "cmake" "gcc" "g++"
               "python3-dev" "python-dev" "python3-pip" "python-pip"
               "build-essential" "clang" "clang-tidy" "clang-format" 
