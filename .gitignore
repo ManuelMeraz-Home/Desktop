@@ -21,6 +21,7 @@
 .npm
 .nv/
 .nvidia*
+.pki/
 .python_history
 .ros/
 .ssh/
@@ -30,8 +31,13 @@
 .viminfo
 .wget-hsts
 .xprofile
+.zoom/
 Desktop/
 Downloads/
+Games/
+Pictures/
 examples.desktop
+node_modules/
+package-lock.json
 snap/
 tags
