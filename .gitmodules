@@ -1,12 +1,3 @@
 [submodule ".vim"]
 	path = .vim
 	url = https://github.com/ManuelMeraz/.vim
-[submodule "projects/tracker"]
-	path = projects/tracker
-	url = https://github.com/ManuelMeraz/Tracker
-[submodule "projects/conan-config"]
-	path = projects/conan-config
-	url = https://github.com/ManuelMeraz/conan-config.git
-[submodule "projects/ReinforcementLearning"]
-	path = projects/ReinforcementLearning
-	url = https://github.com/ManuelMeraz/ReinforcementLearning.git
