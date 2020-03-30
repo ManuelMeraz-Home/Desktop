@@ -111,3 +111,8 @@ setxkbmap -option ctrl:nocaps
 
 # make short-pressed Ctrl behave like Escape:
 xcape -e 'Control_L=Escape'
+
+source $HOME/.profile
+
+source /opt/ros/dashing/setup.bash
+#export ROS_DOMAIN_ID=1

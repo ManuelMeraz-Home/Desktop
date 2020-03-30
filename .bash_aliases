@@ -10,7 +10,7 @@ alias cdp='cd "$PROJECT"'
 alias cdw='cd "$WORKSPACE"'
 alias project="source project"
 
-alias sbash="source ~/.profile"
+alias sbash="source ~/.bashrc"
 
 alias g="git status"
 

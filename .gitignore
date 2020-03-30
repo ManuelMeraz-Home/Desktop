@@ -1,4 +1,8 @@
 *.swp
+rti_workspace/
+.oracle_jre_usage/
+projects/
+Documents/
 .CLion2019*/
 .ICEauthority
 .NERD*
