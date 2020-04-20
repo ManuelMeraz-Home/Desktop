@@ -1,4 +1,4 @@
-
+*.swp
 .948523020855.20200407_191805.bin
 .99-realsense-libusb.rules
 .CLion2019*/
@@ -14,10 +14,13 @@
 .cmake/
 .conan/
 .config/
+.dbus/
+.dmrc
 .fzf.bash
 .gnupg/
 .home_setup
 .java/
+.joe_state
 .local/
 .markdownNavigator/
 .mozilla/
@@ -26,6 +29,7 @@
 .nvidia*
 .oracle_jre_usage/
 .pki/
+.presage/
 .processing/
 .python_history
 .realsense-config.json
@@ -40,6 +44,7 @@
 .wget-hsts
 .wine/
 .xprofile
+.xsession-*
 .zoom/
 Desktop/
 Documents/
