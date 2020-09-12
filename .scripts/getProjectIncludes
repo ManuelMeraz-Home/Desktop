@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # This script is used by the projects script to find all subdirectories
 # containing header files in a directory. Can be used standalone as well.
@@ -34,4 +34,4 @@ if __name__ == '__main__':
     project_dir = sys.argv[1]
 
     include_dirs = IncludeRecursively(project_dir)
-    print ' '.join(include_dirs)
+    print(' '.join(include_dirs))

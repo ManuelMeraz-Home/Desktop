@@ -113,5 +113,3 @@ setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
 
 source $HOME/.profile
-
-#export ROS_DOMAIN_ID=1
