@@ -7,6 +7,7 @@
 .ICEauthority
 .NERD*
 .Xauthority
+.anyconnect
 .arduino15/
 .bash_history
 .bash_logout
@@ -24,14 +25,17 @@
 .fzf.bash
 .gazebo/
 .gnupg/
+.gtk*
 .home_setup
 .hplip/
 .java/
 .joe_state
 .jssc/
+.kde/
 .lesshst
 .local/
 .markdownNavigator/
+.mlterm/
 .mozilla/
 .npm
 .nv/
