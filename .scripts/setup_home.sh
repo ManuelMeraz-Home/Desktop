@@ -1,21 +1,16 @@
 #! /usr/bin/env bash
 
-ROS_DISTRO="melodic"
-
 if [[ -e $HOME/.home_setup ]]; then
   echo "Home is already setup!"
   return 1
 fi
 
 applications=("vim" "tmux" "silversearcher-ag" "git" "htop" 
-              "tree" "openssh-server" "openssh-client" "transmission"
+              "tree" "openssh-server" "openssh-client" 
               "geany" "bash-completion" "cmake" "gcc" "g++"
               "python3-dev" "python-dev" "python3-pip" "python-pip"
               "build-essential" "clang" "clang-tidy" "clang-format" 
-              "clang-tools" "gdb" "ros-$ROS_DISTRO-desktop-full"
-              "python-rosinstall" "python-rosinstall-generator" "xcape"
-              "python-wstool" "build-essential" "python-catkin-tools"
-              "gnome-tweak-tool")
+              "clang-tools" "gdb" "xcape")
 
 
 echo "Sudo is required. Password might be prompted"
@@ -31,22 +26,19 @@ echo "Updating and upgrading ubuntu..."
 sudo apt -qq update
 sudo apt -qq upgrade -y
 
-
 echo "Installing favorite applications..."
 for app in ${applications[@]}; do
   echo "$app"
   sudo apt -qq install $app -y
 done
 
-snap install spotify
-snap install universal-ctags
-snap install clion --classic
-
 echo "Setting up git home repository"
 
 if [ ! -d $HOME/.ssh ]; then
     mkdir $HOME/.ssh
 fi
+
+# TODO: Set up ssh config here
 
 if [ ! -e $HOME/.ssh/known_hosts ]; then
     touch $HOME/.ssh/known_hosts
