@@ -25,10 +25,4 @@ if [ ! "$MANPATH" == *$HOME/.local/share/man* ]; then
 fi
 
 export WORKSPACE="$HOME/projects"
-
-OLD_PROJECT=$PROJECT
 export PROJECT=
-if [ ! "$OLD_PROJECT" == "$PROJECT" ]; then
-    export PROJECT_INCLUDE_DIRS=$(getProjectIncludes $PROJECT)
-fi
-
