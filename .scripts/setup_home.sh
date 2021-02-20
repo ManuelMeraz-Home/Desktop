@@ -10,7 +10,7 @@ applications=("vim" "tmux" "silversearcher-ag" "git" "htop"
               "geany" "bash-completion" "cmake" "gcc" "g++"
               "python3-dev" "python-dev" "python3-pip" "python-pip"
               "build-essential" "clang" "clang-tidy" "clang-format" 
-              "clang-tools" "gdb" "xcape")
+              "clang-tools" "gdb" "xcape" "wget")
 
 
 echo "Sudo is required. Password might be prompted"
@@ -21,24 +21,18 @@ if [[ $? != 0 ]]; then
   return 1
 fi
 
-echo "Updating and upgrading ubuntu..."
+echo "Updating, upgrading, and Installing favorite applications..."
+sudo apt -qq update && apt -qq upgrade -y && apt -qq install -y ${applications}
 
-sudo apt -qq update
-sudo apt -qq upgrade -y
-
-echo "Installing favorite applications..."
-for app in ${applications[@]}; do
-  echo "$app"
-  sudo apt -qq install $app -y
-done
 
 echo "Setting up git home repository"
-
 if [ ! -d $HOME/.ssh ]; then
     mkdir $HOME/.ssh
 fi
 
-# TODO: Set up ssh config here
+if [ ! -e $HOME/.ssh/config ]; then
+    wget https://gist.githubusercontent.com/ManuelMeraz/d216bdca170766b053a110b97abc6648/raw/d56e5acbb891f0e37f1564bd03d5e12e0a5d4bac/config -P $HOME/.ssh
+fi
 
 if [ ! -e $HOME/.ssh/known_hosts ]; then
     touch $HOME/.ssh/known_hosts
