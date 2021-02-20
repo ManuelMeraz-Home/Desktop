@@ -23,6 +23,3 @@ fi
 if [ ! "$MANPATH" == *$HOME/.local/share/man* ]; then
     export MANPATH="$MANPATH:$HOME/.local/share/man/"
 fi
-
-export WORKSPACE="$HOME/projects"
-export PROJECT=

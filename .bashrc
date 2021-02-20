@@ -86,12 +86,9 @@ fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# $HOME/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 
 # vim mode bash
 set -o vi
@@ -102,14 +99,13 @@ bind 'set vi-cmd-mode-string ""'
 # ctrl-l clears screan in vi mode
 bind -m vi-insert "\C-l":clear-screen
 
-[ -d ~/.vim ] && source ~/.vim/.bashrc
-[ -d /home/manny/projects/tracker ] && source /home/manny/projects/tracker/tools/set_env
+[[ -d $HOME/.vim ]] && [[ -f $HOME/.vim/.bashrc ]] && source $HOME/.vim/.bashrc 
 
 # make CapsLock behave like Ctrl:
-setxkbmap -option
-setxkbmap -option ctrl:nocaps
+setxkbmap -option &> /dev/null &> /dev/null
+setxkbmap -option ctrl:nocaps &> /dev/null
 
 # make short-pressed Ctrl behave like Escape:
-xcape -e 'Control_L=Escape'
+xcape -e 'Control_L=Escape' &> /dev/null
 
-source $HOME/.profile
+[[ -f $HOME/.profile ]] && source $HOME/.profile
