@@ -27,7 +27,7 @@ sudo addgroup docker || (echo "Docker group already exists, not making")
 sudo usermod -aG docker $(whoami) || (echo "Attempted to make the user $(whoami) a part of the docker group, but failed." && return 1)
 
 echo "Updating, upgrading, and Installing favorite applications..."
-sudo apt -qq update && sudo apt -qq upgrade -y && sudo apt -qq install -y ${applications[*]} || "Failed to run updates" && return 1
+sudo apt -qq update && sudo apt -qq upgrade -y && sudo apt -qq install -y ${applications[*]} || (echo "Failed to run updates" && return 1)
 
 echo "Setting up git home repository"
 if [ ! -d $HOME/.ssh ]; then
@@ -59,7 +59,7 @@ git update-index --assume-unchanged $HOME/.profile || return 1
 source ~/.bashrc  || return 1
 
 echo "Setting up .vim and projects submodules..."
-git submodule update --init --recursive --remote || return 1
+git submodule update --init --recursive || return 1
 $HOME/.vim/setup.sh || return 1
 
 touch $HOME/.home_setup || return 1
