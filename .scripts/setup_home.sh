@@ -8,36 +8,38 @@ fi
 desktop_branch="master"
 vim_branch="maximal"
 
-request_reboot () { echo 'Reboot? Need to restart to complete Installation. (y/n)' && read x && [[ "$x" == "y" ]] && /sbin/reboot; }
-request_install_displaylink_drivers () { echo 'Install displaylink drivers?. (y/n)' && read x && [[ "$x" == "y" ]] && sudo $HOME/.scripts/displaylink_driver.sh; }
+request_reboot() { echo 'Reboot? Need to restart to complete Installation. (y/n)' && read x && [[ "$x" == "y" ]] && /sbin/reboot; }
+request_install_displaylink_drivers() { echo 'Install displaylink drivers?. (y/n)' && read x && [[ "$x" == "y" ]] && sudo $HOME/.scripts/displaylink_driver.sh; }
 
 applications=("vim" "tmux" "silversearcher-ag" "git" "htop" 
               "tree" "openssh-server" "openssh-client" 
               "geany" "bash-completion" "cmake" "gcc" "g++"
-              "python3-dev" "python-dev" "python3-pip" "python-pip"
+              "python3-dev" "python-dev" "python3-pip" 
               "build-essential" "clang" "clang-tidy" "clang-format" 
               "clang-tools" "gdb" "xcape" "wget" "docker.io")
 
 
 echo "Sudo is required. Password might be prompted"
-sudo sleep 1 || echo "Exiting script, was not succesful" && return 1
+sudo sleep 1 || (echo "Exiting script, was not succesful" && return 1)
 
-sudo usermod -aG docker $(whoami) || return 1
+echo "Making docker group and adding $(whoami) to the group"
+sudo addgroup docker || (echo "Docker group already exists, not making")
+sudo usermod -aG docker $(whoami) || (echo "Attempted to make the user $(whoami) a part of the docker group, but failed." && return 1)
 
 echo "Updating, upgrading, and Installing favorite applications..."
-sudo apt -qq update && sudo apt -qq upgrade -y && sudo apt -qq install -y ${applications[*]} || return 1
+sudo apt -qq update && sudo apt -qq upgrade -y && sudo apt -qq install -y ${applications[*]} || "Failed to run updates" && return 1
 
 echo "Setting up git home repository"
 if [ ! -d $HOME/.ssh ]; then
-    mkdir $HOME/.ssh || return 1
+    mkdir $HOME/.ssh || (echo "Failed to make ~/.ssh directory" && return 1)
 fi
 
 if [ ! -e $HOME/.ssh/config ]; then
-    wget https://gist.githubusercontent.com/ManuelMeraz/d216bdca170766b053a110b97abc6648/raw/d56e5acbb891f0e37f1564bd03d5e12e0a5d4bac/config -P $HOME/.ssh || return 1
+    wget https://gist.githubusercontent.com/ManuelMeraz/d216bdca170766b053a110b97abc6648/raw/d56e5acbb891f0e37f1564bd03d5e12e0a5d4bac/config -P $HOME/.ssh || (echo "Failed ot get ssh config file from github" &&  return 1)
 fi
 
 if [ ! -e $HOME/.ssh/known_hosts ]; then
-    touch $HOME/.ssh/known_hosts || return 1
+    touch $HOME/.ssh/known_hosts || (echo "Failed to make known ssh hosts" && return 1)
 fi
    
 if [ -e $HOME/.profile ]; then
