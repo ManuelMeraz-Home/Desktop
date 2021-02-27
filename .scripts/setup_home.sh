@@ -60,12 +60,12 @@ source ~/.bashrc  || return 1
 
 echo "Setting up .vim and projects submodules..."
 git submodule update --init --recursive || return 1
-$HOME/.vim/setup.sh || return 1
+$HOME/.vim/setup.sh || (echo "Attempted to run vim setup script and failed" && return 1)
 
-touch $HOME/.home_setup || return 1
+touch $HOME/.home_setup 
 source ~/.profile || return 1
 
-rm -rf $HOME/.git && rm $HOME/README.md && rm $HOME/LICENSE && rm $HOME/projects/README.md || return 1
+(rm -rf $HOME/.git && rm $HOME/README.md && rm $HOME/LICENSE && rm $HOME/projects/README.md)  &> /dev/null || true
 
 request_install_displaylink_drivers  || return 1
 request_reboot  || return 1
